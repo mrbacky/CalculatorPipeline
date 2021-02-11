@@ -11,7 +11,7 @@ namespace Services
             double sum = 0;
             foreach (double num in numbers)
             {
-                sum + num;
+                sum += num;
             }
             return sum;
         }
@@ -33,7 +33,13 @@ namespace Services
 
         public double Factorial(double number)
         {
-            throw new NotImplementedException();
+            double factorial = 1;
+
+            for (int i = 1; i <= number; i++)
+            {
+                factorial = factorial * i;
+            }
+            return factorial;
         }
     }
 }
