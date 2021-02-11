@@ -55,6 +55,7 @@ namespace Tests
             Assert.AreEqual(actual,expected);
         }
 
+        //Armand
         [Test]
         public void SubtractNumbersWithNoInput()
         {
@@ -85,6 +86,7 @@ namespace Tests
             Assert.Inconclusive("Test not fully implemented");
         }
 
+        //Rado
         [Test]
         public void MultiplyNumbersWithNoInput()
         {
@@ -115,6 +117,7 @@ namespace Tests
             Assert.Inconclusive("Test not fully implemented");
         }
 
+        //Dominik
         [Test]
         public void DivideNumbersWithNoInput()
         {
@@ -144,7 +147,7 @@ namespace Tests
         {
             Assert.Inconclusive("Test not fully implemented");
         }
-
+        //Dominik
         [Test]
         public void FactorialOfFive()
         {
