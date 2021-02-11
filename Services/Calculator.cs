@@ -6,7 +6,14 @@ namespace Services
     {
         public double Add(params double[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers.Length < 1) throw new InvalidOperationException("array cannot be empty");
+
+            double sum = 0;
+            foreach (double num in numbers)
+            {
+                sum + num;
+            }
+            return sum;
         }
 
         public double Subtract(params double[] numbers)
