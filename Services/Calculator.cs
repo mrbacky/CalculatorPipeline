@@ -33,6 +33,8 @@ namespace Services
 
         public double Factorial(double number)
         {
+            if (number < 0) throw new InvalidOperationException("cannot do factorial on numbers smaller than 0");
+
             double factorial = 1;
 
             for (int i = 1; i <= number; i++)
