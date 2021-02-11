@@ -18,11 +18,13 @@ namespace Services
             return sum;
         }
 
+        //Armand
         public double Subtract(params double[] numbers)
         {
             throw new NotImplementedException();
         }
 
+        //Rado
         public double Multiply(params double[] numbers)
         {
             throw new NotImplementedException();
