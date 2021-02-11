@@ -35,7 +35,7 @@ namespace Services
             if(numbers.Length < 2) throw new InvalidDataException("you need to input at least 2 numbers");
 
             double res = numbers[0];
-            for (int i = 1; i <= numbers.Length; i++) 
+            for (int i = 1; i < numbers.Length; i++) 
             {
                 if (numbers[i] == 0) throw new InvalidDataException("cannot divide with zero");
                 res /= numbers[i];

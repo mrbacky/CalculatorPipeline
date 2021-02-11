@@ -121,31 +121,41 @@ namespace Tests
         [Test]
         public void DivideNumbersWithNoInput()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            double[] array = new double[0];
+            var ex = Assert.Throws<InvalidDataException>(() => _calc.Divide(array));
+            Assert.That(ex.Message, Is.EqualTo("you need to input at least 2 numbers"));
         }
 
         [Test]
         public void DivideTwoPositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            double[] arr = new double[2] { 10,5};     
+            var actual = _calc.Divide(arr);
+            Assert.AreEqual(actual, 2);
         }
 
         [Test]
         public void DivideTwoNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            double[] arr = new double[2] { -10, -5 };
+            var actual = _calc.Divide(arr);
+            Assert.AreEqual(actual, 2);
         }
 
         [Test]
         public void DivideTwoNumbersWithZero()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            double[] array = new double[2] {10,0};
+            var ex = Assert.Throws<InvalidDataException>(() => _calc.Divide(array));
+            Assert.That(ex.Message, Is.EqualTo("cannot divide with zero"));
         }
 
         [Test]
         public void DivideThreeNumbersWithZero()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            double[] array = new double[3] { 10, 6, 0 };
+            var ex = Assert.Throws<InvalidDataException>(() => _calc.Divide(array));
+            Assert.That(ex.Message, Is.EqualTo("cannot divide with zero"));
         }
         //Dominik
         [Test]
