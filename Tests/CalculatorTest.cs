@@ -17,8 +17,8 @@ namespace Tests
 
         [Test]
         public void AddNumbersWithNoInput()
-        {    
-            double[] array = null;
+        {
+            double[] array = new double[0];
             var ex = Assert.Throws<InvalidDataException>(() => _calc.Add(array));
             Assert.That(ex.Message, Is.EqualTo("Values required for Add method"));
         }

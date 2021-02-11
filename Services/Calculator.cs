@@ -7,7 +7,7 @@ namespace Services
     {
         public double Add(params double[] numbers)
         {
-            if (numbers.Length < 1) throw new InvalidDataException("array cannot be empty");
+            if (numbers.Length < 1) throw new InvalidDataException("Values required for Add method");
 
 
             double sum = 0;
