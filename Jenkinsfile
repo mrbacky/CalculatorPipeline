@@ -8,12 +8,12 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh "dotnet build CalculatorPipeline/CalculatorPipeline.sln"
+                sh "dotnet build CalculatorPipeline/CalculatorPipeline.csproj"
             }
         }
         stage("Test") {
             steps {
-               sh  "dotnet test CalculatorPipeline/CalculatorPipeline.sln"
+               sh  "dotnet test CalculatorPipeline/CalculatorPipeline.csproj"
             }
         }
         
