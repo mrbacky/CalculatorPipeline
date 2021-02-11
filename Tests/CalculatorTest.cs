@@ -148,25 +148,29 @@ namespace Tests
         [Test]
         public void FactorialOfFive()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Factorial(5);
+            Assert.AreEqual(actual, 120);
         }
 
         [Test]
         public void FactorialOf200()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var ex = Assert.Throws<InvalidDataException>(() => _calc.Factorial(200));
+            Assert.That(ex.Message, Is.EqualTo("highest factorial for this calculator is 60"));
         }
 
         [Test]
         public void FactorialOfZero()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Factorial(0);
+            Assert.AreEqual(actual, 1);
         }
 
         [Test]
         public void FactorialOfNegativeNumber()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var ex = Assert.Throws<InvalidDataException>(() => _calc.Factorial(-5));
+            Assert.That(ex.Message, Is.EqualTo("cannot do factorial on numbers smaller than 0"));
         }
     }
 }

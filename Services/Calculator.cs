@@ -44,8 +44,9 @@ namespace Services
         public double Factorial(double number)
         {
             if (number < 0) throw new InvalidDataException("cannot do factorial on numbers smaller than 0");
+            if (number > 60) throw new InvalidDataException("highest factorial for this calculator is 60");
 
-        double factorial = 1;
+            double factorial = 1;
 
             for (int i = 1; i <= number; i++)
             {
