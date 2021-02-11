@@ -3,14 +3,15 @@ pipeline {
 	triggers {
 		cron("0 * * * *")
 		pollSCM("*/3 * * * *")
+	}
 		
     stages {
-        stage('Build') {
+        stage("Build") {
             steps {
                 sh "dotnet build CalculatorPipeline/CalculatorPipeline.sln"
             }
         }
-        stage('Test') {
+        stage("Test") {
             steps {
                sh  "dotnet test CalculatorPipeline/CalculatorPipeline.sln"
             }
