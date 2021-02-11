@@ -20,8 +20,10 @@ namespace Terminal
             Console.WriteLine(result);
             
             
+            
             return;
             Console.WriteLine("Hello World!");
+            
             Console.WriteLine(calculator.Add(1, 5, 8));
             Console.WriteLine(calculator.Subtract(10, 5, 2));
             Console.WriteLine(calculator.Multiply(2, 4, 8));
