@@ -23,7 +23,15 @@ namespace Services
         //Armand
         public double Subtract(params double[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers.Length < 1) throw new InvalidDataException("Values required for Multiply method");
+            double result = numbers[0];
+
+           // double result = Subtract(numbers);
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                result = result - numbers[i];
+            }
+            return result;
         }
 
         //Rado

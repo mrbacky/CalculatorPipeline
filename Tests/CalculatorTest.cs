@@ -59,31 +59,43 @@ namespace Tests
         [Test]
         public void SubtractNumbersWithNoInput()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            double[] array = new double[0];
+            var ex = Assert.Throws<InvalidDataException>(() => _calc.Add(array));
+            Assert.That(ex.Message, Is.EqualTo("Values required for Add method"));
         }
 
         [Test]
         public void SubtractTwoPositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Subtract(10,5);
+            const double expected = 5;
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void SubtractTwoNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Subtract(-10, -5);
+            const double expected = -5;
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void SubtractThreePositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Subtract(10, 5, 2);
+            const double expected = 3;
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void SubtractThreeNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            // a - b - c
+            // (-10) - (-5) - (-5) = 
+            var actual = _calc.Subtract(-10, -5, -5);
+            const double expected = 0;
+            Assert.AreEqual(expected, actual);
         }
 
         //Rado
