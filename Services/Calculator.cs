@@ -73,5 +73,10 @@ namespace Services
 
             return factorial;
         }
+
+        public int GetValue()
+        {
+            return 11;
+        }
     }
 }

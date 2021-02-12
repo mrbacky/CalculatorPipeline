@@ -45,5 +45,7 @@ namespace Services
         /// <exception cref="ArgumentOutOfRangeException">Is thrown if a negative number is provided.</exception>
         /// <returns>The factorial of the given number</returns>
         double Factorial(double number);
+
+        int GetValue();
     }
 }
