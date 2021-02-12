@@ -28,7 +28,7 @@ namespace Tests
         {
             var actual = _calc.Add(1.2, 7.4);
             const double expected = 8.6;
-            Assert.AreEqual(actual,expected);
+            Assert.AreEqual(actual, expected);
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace Tests
         {
             var actual = _calc.Add(-1.2, -3);
             const double expected = -4.2;
-            Assert.AreEqual(actual,expected);
+            Assert.AreEqual(actual, expected);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace Tests
         {
             var actual = _calc.Add(3.5, 3, 7.9);
             const double expected = 14.4;
-            Assert.AreEqual(actual,expected);
+            Assert.AreEqual(actual, expected);
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace Tests
         {
             var actual = _calc.Add(-3.5, -3, -7.9);
             const double expected = -14.4;
-            Assert.AreEqual(actual,expected);
+            Assert.AreEqual(actual, expected);
         }
 
         //Armand
@@ -90,31 +90,41 @@ namespace Tests
         [Test]
         public void MultiplyNumbersWithNoInput()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            double[] array = new double[0];
+            var ex = Assert.Throws<InvalidDataException>(() => _calc.Multiply(array));
+            Assert.That(ex.Message, Is.EqualTo("Values required for Multiply method"));
         }
 
         [Test]
         public void MultiplyTwoPositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Multiply(4, 3);
+            const double expected = 12;
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void MultiplyTwoNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Multiply(-2, -3);
+            const double expected = 6;
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void MultiplyThreePositiveNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Multiply(2, 3, 5);
+            const double expected = 30;
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void MultiplyThreeNegativeNumbers()
         {
-            Assert.Inconclusive("Test not fully implemented");
+            var actual = _calc.Multiply(-2, -3, -5);
+            const double expected = -30;
+            Assert.AreEqual(expected, actual);
         }
 
         //Dominik
@@ -129,7 +139,7 @@ namespace Tests
         [Test]
         public void DivideTwoPositiveNumbers()
         {
-            double[] arr = new double[2] { 10,5};     
+            double[] arr = new double[2] {10, 5};
             var actual = _calc.Divide(arr);
             Assert.AreEqual(actual, 2);
         }
@@ -137,7 +147,7 @@ namespace Tests
         [Test]
         public void DivideTwoNegativeNumbers()
         {
-            double[] arr = new double[2] { -10, -5 };
+            double[] arr = new double[2] {-10, -5};
             var actual = _calc.Divide(arr);
             Assert.AreEqual(actual, 2);
         }
@@ -145,7 +155,7 @@ namespace Tests
         [Test]
         public void DivideTwoNumbersWithZero()
         {
-            double[] array = new double[2] {10,0};
+            double[] array = new double[2] {10, 0};
             var ex = Assert.Throws<InvalidDataException>(() => _calc.Divide(array));
             Assert.That(ex.Message, Is.EqualTo("cannot divide with zero"));
         }
@@ -153,10 +163,11 @@ namespace Tests
         [Test]
         public void DivideThreeNumbersWithZero()
         {
-            double[] array = new double[3] { 10, 6, 0 };
+            double[] array = new double[3] {10, 6, 0};
             var ex = Assert.Throws<InvalidDataException>(() => _calc.Divide(array));
             Assert.That(ex.Message, Is.EqualTo("cannot divide with zero"));
         }
+
         //Dominik
         [Test]
         public void FactorialOfFive()
