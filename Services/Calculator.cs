@@ -16,6 +16,7 @@ namespace Services
             {
                 sum += num;
             }
+
             return sum;
         }
 
@@ -29,19 +30,24 @@ namespace Services
         public double Multiply(params double[] numbers)
         {
             if (numbers.Length < 1) throw new InvalidDataException("Values required for Multiply method");
+            var isAllZero = numbers.All(value => value == 0);
+            if (isAllZero)
+                throw new ArgumentOutOfRangeException(nameof(numbers), "Only zeros values not alowed.");
+
             return numbers.Aggregate<double, double>(1, (current, num) => current * num);
         }
 
         public double Divide(params double[] numbers)
         {
-            if(numbers.Length < 2) throw new InvalidDataException("you need to input at least 2 numbers");
+            if (numbers.Length < 2) throw new InvalidDataException("you need to input at least 2 numbers");
 
             double res = numbers[0];
-            for (int i = 1; i < numbers.Length; i++) 
+            for (int i = 1; i < numbers.Length; i++)
             {
                 if (numbers[i] == 0) throw new InvalidDataException("cannot divide with zero");
                 res /= numbers[i];
             }
+
             return res;
         }
 
@@ -56,6 +62,7 @@ namespace Services
             {
                 factorial = factorial * i;
             }
+
             return factorial;
         }
     }
