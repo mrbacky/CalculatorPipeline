@@ -100,7 +100,7 @@ namespace Tests
         {
             var ex = Assert.Throws<ArgumentOutOfRangeException>(()
                 => _calc.Multiply(0, 0, 0, 0, 0));
-            Assert.That(ex.Message, Is.EqualTo("Only zeros values not alowed.\r\nParameter name: numbers"));
+            Assert.That(ex.Message, Is.EqualTo("Only zeros values not alowed."+Environment.NewLine+"Parameter name: numbers"));
         }
 
         [Test]
