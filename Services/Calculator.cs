@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace Services
 {
@@ -27,7 +28,8 @@ namespace Services
         //Rado
         public double Multiply(params double[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers.Length < 1) throw new InvalidDataException("Values required for Multiply method");
+            return numbers.Aggregate<double, double>(1, (current, num) => current * num);
         }
 
         public double Divide(params double[] numbers)
